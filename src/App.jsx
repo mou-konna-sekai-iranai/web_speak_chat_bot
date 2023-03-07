@@ -13,7 +13,7 @@ function App() {
 
   const configuration = new Configuration({
     organization: "org-dVR4vhns2gBuoVlrs3OjOCFa",
-    apiKey: "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"
+    apiKey: "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",
   });
 
   const AITextSubmit = async () => {
@@ -26,10 +26,10 @@ function App() {
         {
           role: "system",
           content:
-            "日本語でアニメの美少女のように可愛く返答して。ただし語尾は「のだ。」、「なのだ。」をつけて。一人称は僕"
+            "日本語でアニメの美少女のように可愛く返答して。ただし語尾は「のだ。」、「なのだ。」をつけて。一人称は僕",
         },
-        { role: "user", content: recognizedText }
-      ]
+        { role: "user", content: recognizedText },
+      ],
     });
 
     const ai_response = completion.data.choices[0].message;
@@ -64,9 +64,9 @@ function App() {
     const response = await fetch(url, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ text: "読み上げる文" })
+      body: JSON.stringify({ text: "読み上げる文" }),
     });
 
     const html = await response.text();
